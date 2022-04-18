@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes'
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const Nav = () => {
     const{theme, setTheme} =useTheme()
@@ -9,7 +10,9 @@ const Nav = () => {
       </div>
 
       <div className="btn-theme font-semibold cursor-pointer ">
-      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className='text-[12px] dark:text-white text-black font-bold'>Dark Mode{theme}</button>
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className='text-[12px] dark:text-white text-black font-bold'>
+        {theme === 'dark' ? <FiMoon size={28} /> : <FiSun size={28} /> }
+      </button>
       </div>
     </nav>
      );
