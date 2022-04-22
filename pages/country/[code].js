@@ -60,7 +60,6 @@ const countryDetail = ({ country, world, border }) => {
         return  borderCountry.push(d)
       })
     }
-    console.log(borderCountry)
   }
 
    
