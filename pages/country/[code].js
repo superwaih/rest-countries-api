@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useMenuContext } from '../../Components/AppContext'
 import { Link } from 'next/link'
 import { BiArrowBack, BiListUl } from 'react-icons/bi';
 
@@ -83,9 +81,9 @@ const countryDetail = ({ country, world, border }) => {
           Back</button>
       </div>
 
-      {country.map((data) => {
+      {country.map((data, i) => {
         return (
-          <div className='country-detail flex flex-col lg:flex-row  space-y-5 p-6'>
+          <div key={i} className='country-detail flex flex-col lg:flex-row  space-y-5 p-6'>
             <div className="country-flag md:w-4/5 md:h-80 lg:w-3/5 ">
               <img src={data.flag} alt="country flag" />
             </div>

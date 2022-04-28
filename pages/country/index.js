@@ -26,7 +26,7 @@ export default function AllCountries({region, search, setSearch, setRegion, coun
             }).map((data) => {
                 return (
                     
-                    <CountryCard onClick={() => sendProps()} countryalpha3Code={data.alpha3Code} countryName={data.name} countryFlag={data.flag} countryRegion={data.region} countryPopulation={data.population} countryCapital={data.capital} />
+                    <CountryCard key={data.alpha3Code} onClick={() => sendProps()} countryalpha3Code={data.alpha3Code} countryName={data.name} countryFlag={data.flag} countryRegion={data.region} countryPopulation={data.population} countryCapital={data.capital} />
                 )
             }) : countries.filter(data => data.region === region).filter((data) => {
                 if (search == "") {
@@ -36,7 +36,7 @@ export default function AllCountries({region, search, setSearch, setRegion, coun
                 }
             }).map((data) => {
                 return (
-                    <CountryCard onClick={() => sendProps()} countryalpha3Code={data.alpha3Code} countryName={data.name} countryFlag={data.flag} countryRegion={data.region} countryPopulation={data.population} countryCapital={data.capital} />
+                    <CountryCard key={data.alpha3Code} onClick={() => sendProps()} countryalpha3Code={data.alpha3Code} countryName={data.name} countryFlag={data.flag} countryRegion={data.region} countryPopulation={data.population} countryCapital={data.capital} />
                 )
             })}
 

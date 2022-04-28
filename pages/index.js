@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState, useRef, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Search from './Home'
 import SearchBox from '../Components/Search'
@@ -32,20 +32,15 @@ export const getStaticProps = async () => {
 export default function Home({countries, notFound}) {
   
   const router = useRouter()
-  
-  function sendProps (){
-    Router.push({
-      pathname: '/Detail',
-      query:{
-        countries
-      }
-    })
-  }
+
   
   const [region, setRegion] = useState();
   const [search, setSearch] = useState("")
-
-
+  const [mounted, setMounted] = useState(false);
+  useEffect(()=> setMounted(true), [])
+  if(!mounted){
+    return null
+  }
   return (
     <div >
       <Head>
