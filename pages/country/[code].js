@@ -44,7 +44,7 @@ export const getStaticProps = async (context) => {
 
 
 
-const countryDetail = ({ country, world, border }) => {
+const CountryDetail = ({ country, world, border }) => {
   
   const borderCountry = [];
 
@@ -138,4 +138,4 @@ const countryDetail = ({ country, world, border }) => {
   );
 }
 
-export default countryDetail;
+export default CountryDetail;
