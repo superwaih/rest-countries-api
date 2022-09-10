@@ -44,7 +44,7 @@ export const getStaticProps = async (context) => {
 
 
 const CountryDetail = ({ country, world, border }) => {
-  console.log(country)
+  
 
   const router = useRouter()
   const handleBack = () => {
