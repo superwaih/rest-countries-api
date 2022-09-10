@@ -2,12 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import Search from './Home'
-import SearchBox from '../Components/Search'
-import Nav from '../Components/Nav'
+
 import Router, { useRouter } from 'next/router';
 import AllCountries from './country';
-import worldContext from '../src/worldContext' 
 
 export const getStaticProps = async () => {
   const res = await fetch('https://restcountries.com/v2/all');

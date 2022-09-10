@@ -25,16 +25,15 @@ export const getStaticProps = async (context) => {
   const borderArr = []
   const res = await fetch('https://restcountries.com/v2/all');
   const data = await res.json();
+  
  
   const singleCountry = data.filter(single => single.alpha3Code === count);
-
-
-
-  const borderCountriesArr = singleCountry.map((e) => {
-    borderArr.push(e.borders)
-  })
+  
+  // const borderCountriesArr = singleCountry.map((e) => {
+  //   borderArr.push(e.borders)
+  // })
   return {
-    props: { country: singleCountry, world: data, border: borderArr}
+    props: { country: singleCountry}
 
   }
 }
@@ -45,28 +44,7 @@ export const getStaticProps = async (context) => {
 
 
 const CountryDetail = ({ country, world, border }) => {
-  
-  const borderCountry = [];
-
-  if(border.length > 0){
-    for(let i = 0; i < border[0].length; i++){
-      world.filter((d) => {
-        if(border[0][i] === d.alpha3Code){
-        return  d
-        }
-      }).map((d) => {
-        return  borderCountry.push(d)
-      })
-    }
-  }
-
-   
-
- 
-
-
-
-
+  console.log(country)
 
   const router = useRouter()
   const handleBack = () => {
@@ -115,13 +93,13 @@ const CountryDetail = ({ country, world, border }) => {
               <div className="border-countries text-[13px] flex space-x-2 justify-between">
                 <h3 className='font-semibold' >Border Countries: </h3>
                 <div className='grid-cols-2 md:grid-cols-4 grid'>
-                {borderCountry.map((e) => { 
+                {/* {borderCountry.map((e) => { 
                   return(
                     <a href={'/country/'+ e.alpha3Code} className='p-2 hover:opacity-40 cursor-pointer ' key={e.alpha3Code} >
                         <span className='rounded shadow dark:bg-DarkModeElement p-2 '>{e.name.length > 15 ? e.name.slice(0,8)  : e.name  }</span>
                   </a>
                    )
-              })}    
+              })}     */}
                 </div>
               </div>
             </div>

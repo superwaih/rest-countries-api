@@ -3,7 +3,7 @@ import Link from 'next/link'
 const CountryCard = ({countryFlag, countryalpha3Code, countryCapital, countryName, countryPopulation, countryRegion}) => {
     return ( 
         <Link href={'/country/'+ countryalpha3Code}>
-        <div key={countryalpha3Code} className="card items-center h-80 max-w-xs w-64   rounded transform hover:scale-105 duration-500 bg:white shadow dark:bg-DarkModeElement">
+        <div key={countryalpha3Code} className="card items-center cursor-pointer h-80 max-w-xs w-64   rounded transform hover:scale-105 duration-500 bg-white shadow dark:bg-DarkModeElement">
             <div className="card-img w-full  h-1/2">
                 <img className="rounded-t-md w-full h-full object-cover" src={countryFlag} alt="" />
             </div>
